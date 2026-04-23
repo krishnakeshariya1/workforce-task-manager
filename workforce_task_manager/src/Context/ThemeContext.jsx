@@ -22,9 +22,10 @@ export const ThemeProvider = ({ children }) => {
     }
 
     return (
-        <ThemeContext.Provider>
+        <ThemeContext.Provider value={toggleTheme, theme}>
             {children}
         </ThemeContext.Provider>
     )
 }
-export const useTheme = useContext(ThemeContext)
+
+export const useTheme = () => useContext(ThemeContext)

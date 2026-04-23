@@ -7,3 +7,6 @@
     --secondary-text-Color : #888;
     --primary-page-Color :#0C0C0C; 
 }
+#loginForm{
+    border-radius: 0 50px 0 50px;
+}

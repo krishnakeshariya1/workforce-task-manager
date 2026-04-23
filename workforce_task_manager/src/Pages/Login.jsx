@@ -22,8 +22,9 @@ export const Login = () => {
 
     return (
         < form
+            id="loginForm"
             onSubmit={(e)=> handleSubmit(e)}
-            className="flex flex-col items-start justify-center gap-5 w-fit py-10 px-15 text-[var(--primary-text-Color)]"
+            className="flex flex-col items-start justify-center gap-5 w-fit py-10 px-15 text-[var(--primary-text-Color)] bg-[#0f0f0f] "
         >
             < h2
                 className="text-4xl font-bold text-[var(--primary-text-Color)] mb-1 font-serif "
