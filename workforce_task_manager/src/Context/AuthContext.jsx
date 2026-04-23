@@ -1,4 +1,5 @@
-import { Children, createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { getData } from "../Utils/localStorage";
 
 const AuthContext = createContext();
 
@@ -17,7 +18,7 @@ export const AuthProvider = ({ children }) => {
 
         const usersData = getData();
 
-        const foundUser = usersData.find((user) => {
+        const foundUser = usersData.users.find((user) => {
             return user.email === email && user.password === password;
         })
 
@@ -30,7 +31,7 @@ export const AuthProvider = ({ children }) => {
     }
 
     const logOut = () => {
-        localStorage.removeItem("loggedInUser");
+        localStorage.removeItem("loggedUser");
         setUser(null);
     }
 
@@ -40,3 +41,5 @@ export const AuthProvider = ({ children }) => {
         </AuthContext.Provider>
     )
 }
+
+export const useAuth = () => useContext(AuthContext);
