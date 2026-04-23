@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { getData } from "../Utils/localStorage";
 
 const AuthContext = createContext();
@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
     }, [])
 
     const login = (email, password) => {
-        if (email === "" || password === "") return;
+        if (!email || !password) return;
 
         const usersData = getData();
 
