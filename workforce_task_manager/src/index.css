@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
-:root{
+body.dark{
     --body-background-Color : #000;
     --primary-button-Color : #BC4C23;
+    --primary-text-Color : #d4d4d4;
+    --secondary-text-Color : #888;
+    --primary-page-Color :#0f0f0f; 
+}
+body.light{
+    --body-background-Color : white;
+    --primary-button-Color : #d99c86;
     --primary-text-Color : #d4d4d4;
     --secondary-text-Color : #888;
     --primary-page-Color :#0C0C0C; 

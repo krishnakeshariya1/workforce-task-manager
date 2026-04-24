@@ -5,9 +5,9 @@ import { Children } from "react"
 export const ProtectedRoute = ({chidren, role}) =>{
     const {user} = useAuth()
 
-    if(!user) return < Navigate to="/" />
+    if(!user) return < Navigate to="/"  replace />
 
-    if(role && user.role !== role) return <Navigate to="/"/>
+    if(role && user.role !== role) return <Navigate to="/" replace/>
 
     return chidren
 }

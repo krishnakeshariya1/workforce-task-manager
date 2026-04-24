@@ -3,6 +3,8 @@ import { setData } from "./Utils/localStorage"
 import { Login } from "./Pages/Login"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { ProtectedRoute } from "./Routes/ProtectedRoute"
+import { AdminDashboard } from "./Pages/Admin/AdminDashboard"
+import { EmployeeDashboard } from "./Pages/Employee/EmployeeDashboard"
 
 const App = () => {
   const data = {
@@ -11,14 +13,14 @@ const App = () => {
         id: "1",
         name: "Admin",
         email: "admin@gmail.com",
-        password: "123",
+        password: 123,
         role: "admin"
       },
       {
         id: "2",
         name: "Employee",
         email: "emp@gmail.com",
-        password: "123",
+        password: 123,
         role: "employee"
       }
     ],
@@ -29,13 +31,6 @@ const App = () => {
     setData(data)
   }, [])
 
-  function Admin() {
-    return <h1>Admin Dashboard</h1>;
-  }
-
-  function Employee() {
-    return <h1>Employee Dashboard</h1>;
-  }
 
   return (
 
@@ -51,7 +46,7 @@ const App = () => {
           path="/admin"
           element={
             < ProtectedRoute >
-              <Admin />
+              < AdminDashboard />
             </ProtectedRoute>}
         />
 
@@ -59,7 +54,7 @@ const App = () => {
           path="/employee"
           element={
             < ProtectedRoute >
-              < Employee />
+              < EmployeeDashboard />
             </ProtectedRoute>}
         />
 

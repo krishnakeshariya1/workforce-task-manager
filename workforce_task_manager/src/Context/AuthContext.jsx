@@ -14,12 +14,13 @@ export const AuthProvider = ({ children }) => {
     }, [])
 
     const login = (email, password) => {
+        password = Number(password)
         if (!email || !password) return;
 
         const usersData = getData();
 
         const foundUser = usersData.users.find((user) => {
-            return user.email === email && user.password === password;
+            return user.email === email && user.password === Number(password);
         })
 
         if (foundUser) {

@@ -5,6 +5,7 @@ import { Navigate, useNavigate} from 'react-router-dom'
 export const Login = () => {
 
     const {login} = useAuth();
+    const navigate = useNavigate();
 
     const [form, setForm] = useState({
         email : "",
@@ -15,19 +16,25 @@ export const Login = () => {
         e.preventDefault();
 
         const user = login(form.email, form.password);
+        console.log(user);
 
-        if(!user) alert("Invalide Credential");
+        if(!user) {
+            alert("Invalide Credential")
+            return;
+        }
 
-        if(user.role === "admin") console.log("done") 
+        if(user.role === "admin") {
+            navigate("/admin");
+        }
 
     }
 
     return (
-        <div className="w-full h-screen flex items-center justify-center bg-black ">
+        <div className="w-full h-screen flex items-center justify-center bg-[var(--body-background-Color)] ">
         < form
             id="loginForm"
             onSubmit={(e)=> handleSubmit(e)}
-            className="flex flex-col items-start justify-center gap-5 w-fit py-10 px-15 text-[var(--primary-text-Color)] bg-[#0f0f0f] "
+            className="flex flex-col items-start justify-center gap-5 w-fit py-10 px-15 text-[var(--primary-text-Color)] bg-[var(--primary-page-Color)] "
         >
             < h2
                 className="text-4xl font-bold text-[var(--primary-text-Color)] mb-1 font-serif "
