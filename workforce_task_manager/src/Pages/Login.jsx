@@ -3,7 +3,8 @@ import { useAuth } from "../Context/AuthContext";
 import { Navigate, useNavigate} from 'react-router-dom'
 
 export const Login = () => {
-    const {login} = useAuth()
+
+    const {login} = useAuth();
 
     const [form, setForm] = useState({
         email : "",
@@ -17,10 +18,12 @@ export const Login = () => {
 
         if(!user) alert("Invalide Credential");
 
-        Navigate("/employee")
+        if(user.role === "admin") console.log("done") 
+
     }
 
     return (
+        <div className="w-full h-screen flex items-center justify-center bg-black ">
         < form
             id="loginForm"
             onSubmit={(e)=> handleSubmit(e)}
@@ -76,5 +79,6 @@ export const Login = () => {
             </button>
 
         </form>
+        </div>
     )
 }

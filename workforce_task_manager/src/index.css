@@ -9,4 +9,8 @@
 }
 #loginForm{
     border-radius: 0 50px 0 50px;
+    border-top: 1px solid whitesmoke;
+    border-left: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke transparent;
+    border-bottom: 1px solid whitesmoke transparent;
 }
