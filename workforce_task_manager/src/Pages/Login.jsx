@@ -26,6 +26,9 @@ export const Login = () => {
         if(user.role === "admin") {
             navigate("/admin");
         }
+        else{
+            navigate("/employee")
+        }
 
     }
 
