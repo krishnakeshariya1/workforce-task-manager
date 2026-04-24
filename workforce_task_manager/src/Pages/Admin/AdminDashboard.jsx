@@ -1,7 +1,9 @@
+import { Navbar } from "../../Component/Navbar"
+
 export const AdminDashboard = () =>{
     return(
-        <div>
-            <h1>admin sahab</h1>
+        <div className="w-full h-screen bg-[var(--)]">
+            < Navbar />
         </div>
     )
 }

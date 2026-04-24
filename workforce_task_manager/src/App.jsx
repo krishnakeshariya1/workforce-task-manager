@@ -43,7 +43,7 @@ const App = () => {
           element={<Login />} />
 
         < Route
-          path="/admin"
+          path="/admin/*"
           element={
             < ProtectedRoute >
               < AdminDashboard />
@@ -51,7 +51,7 @@ const App = () => {
         />
 
         < Route
-          path="/employee"
+          path="/employee/*"
           element={
             < ProtectedRoute >
               < EmployeeDashboard />
