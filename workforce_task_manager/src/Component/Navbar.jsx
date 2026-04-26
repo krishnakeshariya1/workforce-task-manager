@@ -1,6 +1,6 @@
 import { navLinks } from "../Config/navLinks";
 import { useAuth } from "../Context/AuthContext"
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const Navbar = () => {
     const { user } = useAuth();
@@ -12,17 +12,36 @@ export const Navbar = () => {
     return (
         < div
             className="w-full py-4 px-15 gap-2 flex items-center justify-between ">
-            <div className="text-5xl">Logo</div>
-            <nav className="bg-[var(--navbar-color)] text-[var(--primary-text-Color)] py-2.5 px-7 flex items-center justify-between gap-7 rounded-3xl">
+            < Link
+                className="bg-black w-18"
+            >
+                < img
+                    src="public\setting_5034601.png "
+                    alt="project logo"
+                    className="w-full overflow-hidden"
+                />
+            </Link>
+
+            < nav
+                className="bg-[var(--navbar-color)] text-[var(--primary-text-Color)] py-2.5 px-7 flex items-center justify-between gap-7 rounded-3xl"
+            >
                 {links.map((link) => {
                     return (
-                        <Link key={link.path} to={link.path} className="text-lg font-semibold text-white">
+                        < NavLink key={link.path} to={link.path} className="text-lg font-semibold text-white">
                             {link.name}
-                        </Link>
+                        </NavLink>
                     )
                 })}
             </nav>
-            <img src="" alt="logout img" />
+            < Link
+                className="bg-black w-16"
+            >
+                < img
+                    src="public\logout_5544338.png "
+                    alt="project logo"
+                    className="w-full overflow-hidden"
+                />
+            </Link>
         </div>
     )
 }
