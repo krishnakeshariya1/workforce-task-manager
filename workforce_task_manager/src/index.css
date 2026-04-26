@@ -5,7 +5,8 @@ body.dark{
     --primary-button-Color : #BC4C23;
     --primary-text-Color : #d4d4d4;
     --secondary-text-Color : #888;
-    --primary-page-Color :#0f0f0f; 
+    --primary-page-Color :#0f0f0f;
+    --navbar-color : #272727 ; 
 }
 body.light{
     --body-background-Color : white;

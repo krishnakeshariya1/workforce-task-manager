@@ -13,7 +13,7 @@ export const Navbar = () => {
         < div
             className="w-full py-4 px-15 gap-2 flex items-center justify-between ">
             <div className="text-5xl">Logo</div>
-            <nav className="bg-gray-500 py-2.5 px-6 flex items-center justify-between gap-7 rounded-3xl">
+            <nav className="bg-[var(--navbar-color)] text-[var(--primary-text-Color)] py-2.5 px-7 flex items-center justify-between gap-7 rounded-3xl">
                 {links.map((link) => {
                     return (
                         <Link key={link.path} to={link.path} className="text-lg font-semibold text-white">

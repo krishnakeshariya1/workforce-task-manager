@@ -11,9 +11,9 @@ const App = () => {
     users: [
       {
         id: "1",
-        name: "Admin",
-        email: "admin@gmail.com",
-        password: 123,
+        name: "Krishna keshariya",
+        email: "keshariyakrishna8@gmail.com",
+        password: 224755,
         role: "admin"
       },
       {
