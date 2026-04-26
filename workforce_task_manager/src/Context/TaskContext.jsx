@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import { getData, setData } from "../Utils/localStorage";
+import { useContext } from "react";
 
 
 const TaskContext = createContext();
@@ -42,8 +43,9 @@ export const TaskProvider = ({ children }) => {
         setData(updated)
     }
     return (
-        <TaskContext.Provider>
+        <TaskContext.Provider value={createEmployee, createTask }>
             {children}
         </TaskContext.Provider>
     )
 }
+export const useTask = () => useContext(TaskContext)

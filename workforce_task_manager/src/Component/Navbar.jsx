@@ -3,7 +3,7 @@ import { useAuth } from "../Context/AuthContext"
 import { Link, NavLink } from "react-router-dom";
 
 export const Navbar = () => {
-    const { user } = useAuth();
+    const { user, logOut } = useAuth();
 
     if (!user) return;
 
@@ -37,9 +37,10 @@ export const Navbar = () => {
                 className="bg-black w-16"
             >
                 < img
+                    onClick={()=>logOut()}
                     src="public\logout_5544338.png "
                     alt="project logo"
-                    className="w-full overflow-hidden"
+                    className="w-full overflow-hidden cursor-pointer"
                 />
             </Link>
         </div>
