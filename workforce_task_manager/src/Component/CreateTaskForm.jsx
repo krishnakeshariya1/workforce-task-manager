@@ -20,16 +20,16 @@ export const CreateTaskForm = () => {
     return (
 
         < div
-            className="w-full h-auto bg-[var(--body-background-Color) border-2 border-amber-50 flex items-center justify-center py-3 px-5"
+            className="w-full h-auto flex items-center justify-center py-3 px-5"
         >
             < form
                 onSubmit={handleSubmit}
-                className="bg-[var(--primary-page-Color)] text-[var(--primary-text-Color)] flex flex-col gap-7 items-start justify-center py-4 px-10 rounded-4xl"
+                className=" bg-[var(--primary-page-Color)] text-[var(--primary-text-Color)] flex flex-col gap-7 items-start justify-center py-4 px-10 rounded-4xl"
             >
                 < h2
-                    className="text-4xl font-bold text-[var(--primary-button-Color)] font-serif "
+                    className="text-3xl font-bold text-[var(--primary-button-Color)] font-serif  underline underline-offset-5"
                 >
-                    Log In
+                    Create Employee  
                 </h2>
                 <div className=" flex flex-col gap-2 text-start">
                     < label
@@ -83,7 +83,7 @@ export const CreateTaskForm = () => {
                 </div>
 
                 < button
-                  className="bg-[var(--primary-button-Color)] px-6 py-2 rounded-xl font-semibold self-center"
+                  className="bg-[var(--primary-button-Color)] px-6 py-2 rounded-xl font-semibold self-center cursor-pointer"
                   type="submit"
                 >
                      Create
