@@ -13,7 +13,7 @@ export const Navbar = () => {
         < div
             className="w-full py-4 px-15 gap-2 flex items-center justify-between ">
             < Link
-                className="bg-black w-18"
+                className="bg-black w-15"
             >
                 < img
                     src="public\setting_5034601.png "
@@ -34,7 +34,7 @@ export const Navbar = () => {
                 })}
             </nav>
             < Link
-                className="bg-black w-16"
+                className="bg-black w-13"
             >
                 < img
                     onClick={()=>logOut()}

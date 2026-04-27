@@ -5,6 +5,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { ProtectedRoute } from "./Routes/ProtectedRoute"
 import { AdminDashboard } from "./Pages/Admin/AdminDashboard"
 import { EmployeeDashboard } from "./Pages/Employee/EmployeeDashboard"
+import { EmployeesDetail } from "./Pages/Admin/EmployeesDetail"
+import { AllTasks } from "./Pages/Admin/AllTasks"
+import { AdminLayout } from "./Pages/Admin/AdminLayout"
 
 const App = () => {
   const data = {
@@ -38,17 +41,37 @@ const App = () => {
 
       <Routes >
 
+        {/* Login Page Route  */}
+        
         < Route
           path="/"
           element={<Login />} />
 
-        < Route
-          path="/admin/*"
-          element={
-            < ProtectedRoute >
-              < AdminDashboard />
-            </ProtectedRoute>}
-        />
+            {/* Admin routes */}
+
+          < Route
+            path="/admin/*"
+            element={
+              < ProtectedRoute >
+                < AdminLayout />
+              </ProtectedRoute>}
+          >
+            < Route 
+              index 
+              element={ < AdminDashboard />}
+            />
+            < Route 
+              path="employeesDetail" 
+              element={ <EmployeesDetail />}
+            />
+            < Route 
+              path="AllTasks" 
+              element={ < AllTasks />}
+            />
+
+          </Route>
+
+        {/* Employee Routes */}
 
         < Route
           path="/employee/*"

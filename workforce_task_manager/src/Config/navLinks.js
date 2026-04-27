@@ -1,8 +1,8 @@
 export const navLinks = {
   admin: [
     { name: "Dashboard", path: "/admin" },
-    { name: "Employees", path: "/admin/employees" },
-    { name: "Tasks", path: "/admin/tasks" }
+    { name: "EmployeesDetail", path: "/admin/employeesDetail" },
+    { name: "AllTasks", path: "/admin/AllTasks" }
   ],
   employee: [
     { name: "Dashboard", path: "/employee" },
