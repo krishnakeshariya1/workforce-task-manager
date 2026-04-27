@@ -19,13 +19,6 @@ const App = () => {
         password: 224755,
         role: "admin"
       },
-      {
-        id: "2",
-        name: "Employee",
-        email: "emp@gmail.com",
-        password: 123,
-        role: "employee"
-      }
     ],
     tasks: []
   }
@@ -42,7 +35,7 @@ const App = () => {
       <Routes >
 
         {/* Login Page Route  */}
-        
+
         < Route
           path="/"
           element={<Login />} />

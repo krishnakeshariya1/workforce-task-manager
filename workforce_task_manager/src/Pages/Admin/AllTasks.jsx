@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom"
 import { Navbar } from "../../Component/Navbar"
-import { CreateTaskForm } from "../../Component/CreateTaskForm"
+import { CreateEmployeeForm } from "../../Component/CreateEmployeeForm"
 
 export const AllTasks = () =>{
     return(
         <div className="text-white ">
-            <CreateTaskForm />
+            all task ahi 
         </div>
     )
 }

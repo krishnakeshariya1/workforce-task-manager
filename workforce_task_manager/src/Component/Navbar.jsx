@@ -2,6 +2,7 @@ import { navLinks } from "../Config/navLinks";
 import { useAuth } from "../Context/AuthContext"
 import { Link, NavLink } from "react-router-dom";
 
+
 export const Navbar = () => {
     const { user, logOut } = useAuth();
 
@@ -11,12 +12,12 @@ export const Navbar = () => {
 
     return (
         < div
-            className="w-full py-4 px-15 gap-2 flex items-center justify-between ">
+            className="w-full py-4 px-15 gap-2 flex items-center justify-between mb-10 ">
             < Link
                 className="bg-black w-15"
             >
                 < img
-                    src="public\setting_5034601.png "
+                    src="\public\setting_5034601.png"
                     alt="project logo"
                     className="w-full overflow-hidden"
                 />
@@ -38,7 +39,7 @@ export const Navbar = () => {
             >
                 < img
                     onClick={()=>logOut()}
-                    src="public\logout_5544338.png "
+                    src="\public\logout_5544338.png"
                     alt="project logo"
                     className="w-full overflow-hidden cursor-pointer"
                 />

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useTask } from "../Context/TaskContext"
 
-export const CreateTaskForm = () => {
+export const CreateEmployeeForm = () => {
 
     const {createEmployee} = useTask()
 
