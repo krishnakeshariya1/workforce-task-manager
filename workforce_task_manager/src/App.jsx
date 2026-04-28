@@ -19,6 +19,20 @@ const App = () => {
         password: 224755,
         role: "admin"
       },
+      {
+        id: "2",
+        name: "Prince Verma",
+        email: "verma@gmail.com",
+        password: 224755,
+        role: "employee"
+      },
+      {
+        id: "3",
+        name: "Ajeet Likhar",
+        email: "likhar8@gmail.com",
+        password: 224755,
+        role: "employee"
+      }
     ],
     tasks: []
   }
