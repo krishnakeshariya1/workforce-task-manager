@@ -1,4 +1,4 @@
-export const AllUsersList = ({users, selected}) =>{
+export const AllUsersList = ({users, selected, setSelected}) =>{
     return(
   <div className="bg-slate-900 rounded-2xl border border-slate-800 flex flex-col overflow-hidden">
 
