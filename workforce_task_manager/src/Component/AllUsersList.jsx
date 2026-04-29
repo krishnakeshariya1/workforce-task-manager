@@ -3,7 +3,7 @@ export const AllUsersList = ({users, selected, setSelected}) =>{
   <div className="bg-slate-900 rounded-2xl border border-slate-800 flex flex-col overflow-hidden ">
 
           <div className="flex-1 overflow-y-auto divide-y divide-slate-800/60">
-            {users.map((user) => (
+            {users.map((user) =>  (
               <button
                 key={user.id}
                 onClick={() => setSelected(user)}
@@ -13,10 +13,7 @@ export const AllUsersList = ({users, selected, setSelected}) =>{
                     : "border-l-2 border-transparent"
                   }`}
               >
-                <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${user.color} flex items-center justify-center text-xs font-bold shrink-0 shadow-lg`}>
-                  {user.avatar}
-                </div>
-                <div className="flex-1 min-w-0">
+                <div className="flex-1 min-w-0 ml-5">
                   <p className="text-sm font-medium text-slate-200 truncate">{user.name}</p>
                   <p className="text-xs text-slate-500 truncate">{user.role}</p>
                 </div>
