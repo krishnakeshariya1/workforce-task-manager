@@ -7,7 +7,12 @@ import { useState } from "react"
 import { FilterBtn } from "../../Component/FilterBtn"
 import { TaskCard } from "../../Component/TaskCard"
 import { useTask } from "../../Context/TaskContext"
+import { TaskForm } from "../../Component/TaskFrom"
 
 export const CreateTask = () => {
-
+    return (
+        <div className="text-white">
+            <TaskForm />
+        </div>
+    )
 }

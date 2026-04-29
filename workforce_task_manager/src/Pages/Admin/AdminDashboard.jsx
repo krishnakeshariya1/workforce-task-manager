@@ -37,42 +37,7 @@ export const AdminDashboard = () =>{
             </div>
 
             <div className=" h-96 overflow-y-scroll flex  flex-col gap-4" id="taskCardContainer">
-                <TaskCard   
-                    title="Redesign landing page hero section"
-                    description="Update the hero section with new brand visuals and improved CTA layout."
-                    status="Completed"
-                    priority="High"
-                    tags={["Design", "UI"]}
-                    user="Priya Mehta"
-                    date="Apr 10, 2026"
-                />
-                <TaskCard   
-                    title="Redesign landing page hero section"
-                    description="Update the hero section with new brand visuals and improved CTA layout."
-                    status="Completed"
-                    priority="High"
-                    tags={["Design", "UI"]}
-                    user="Priya Mehta"
-                    date="Apr 10, 2026"
-                />
-                <TaskCard   
-                    title="Redesign landing page hero section"
-                    description="Update the hero section with new brand visuals and improved CTA layout."
-                    status="Completed"
-                    priority="High"
-                    tags={["Design", "UI"]}
-                    user="Priya Mehta"
-                    date="Apr 10, 2026"
-                />
-                <TaskCard   
-                    title="Redesign landing page hero section"
-                    description="Update the hero section with new brand visuals and improved CTA layout."
-                    status="Completed"
-                    priority="High"
-                    tags={["Design", "UI"]}
-                    user="Priya Mehta"
-                    date="Apr 10, 2026"
-                />
+                <TaskCard />
             </div>
 
 

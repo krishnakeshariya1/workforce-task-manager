@@ -31,7 +31,6 @@ export const TaskProvider = ({ children }) => {
         const newTask = {
             ...task,
             id: Date.now().toString(),
-            status: "todo",
             comment: [],
         }
 
