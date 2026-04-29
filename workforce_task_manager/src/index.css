@@ -22,3 +22,9 @@ body.light{
     border-right: 1px solid whitesmoke transparent;
     border-bottom: 1px solid whitesmoke transparent;
 }
+#taskCardContainer::-webkit-scrollbar{
+    overflow-y:  hidden;
+}
+#taskCardContainer::-webkit-scrollbar{
+    overflow-y:  hidden;
+}

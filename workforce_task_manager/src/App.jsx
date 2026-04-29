@@ -6,7 +6,7 @@ import { ProtectedRoute } from "./Routes/ProtectedRoute"
 import { AdminDashboard } from "./Pages/Admin/AdminDashboard"
 import { EmployeeDashboard } from "./Pages/Employee/EmployeeDashboard"
 import { EmployeesDetail } from "./Pages/Admin/EmployeesDetail"
-import { AllTasks } from "./Pages/Admin/AllTasks"
+import { CreateTask } from "./Pages/Admin/CreateTask"
 import { AdminLayout } from "./Pages/Admin/AdminLayout"
 
 const App = () => {
@@ -60,8 +60,8 @@ const App = () => {
               element={ <EmployeesDetail />}
             />
             < Route 
-              path="AllTasks" 
-              element={ < AllTasks />}
+              path="CreateTask" 
+              element={ < CreateTask />}
             />
 
           </Route>
