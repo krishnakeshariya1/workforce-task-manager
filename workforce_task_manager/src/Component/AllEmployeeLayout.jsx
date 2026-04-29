@@ -13,7 +13,7 @@ export const AllEmployeeLayout = () =>{
     const [selected, setSelected] = useState(users[0])
 
     return(
-        <div className=" bg-slate-950 text-white p-4 flex flex-col gap-4">
+        <div className=" bg-slate-950 text-white p-4 flex flex-col gap-4 overflow-hidden">
 
       <div className="flex items-center justify-between px-2">
         <div className="flex items-center gap-3">
@@ -24,7 +24,7 @@ export const AllEmployeeLayout = () =>{
         <span className="text-xs text-slate-500">{users.length} Total Users</span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-4 flex-1 max-h-86">
+      <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-4 flex-1 h-80  overflow-y-hidden">
         < AllUsersList  users={users} selected={selected} setSelected={setSelected}/>
 
         {selected ? (

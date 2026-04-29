@@ -1,33 +1,30 @@
 import { useTask } from "../Context/TaskContext";
 
-export const TaskCard = () => {
+export const TaskCard = ({finalTasks}) => {
 
-    const { data } = useTask()
-
-    const tasks = data.tasks
 
     const statusColor = {
-        "Completed": "bg-green-600",
-        "In Progress": "bg-blue-600",
-        "To Do": "bg-gray-600"
+        "completed": "bg-green-600",
+        "inprogress": "bg-blue-600",
+        "todo": "bg-orange-400 text-black",
     };
 
     const priorityColor = {
-        high: "bg-red-600",
-        medium: "bg-yellow-500",
-        low: "bg-green-500"
+        high: "bg-red-600 text-white",
+        medium: "bg-yellow-500  ",
+        low: "bg-green-500 text-white"
     };
 
     return (
         <>
-            {tasks.map((task) => {
+            {finalTasks.map((task) => {
                 return (
                     <div className="bg-[#1c1c1c] p-4 rounded-lg border border-gray-700" key={task.id}>
 
                         <div className="flex justify-between items-center mb-2">
                             <h3 className="text-lg font-semibold text-white">{task.title}</h3>
 
-                            <span className={`text-sm px-3 py-1 rounded-full ${statusColor[status]}`}>
+                            <span className={`text-sm px-3 py-1 rounded-full font-semibold ${statusColor[task.status]}`}>
                                 {task.status}
                             </span>
                         </div>
