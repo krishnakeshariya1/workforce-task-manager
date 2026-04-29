@@ -1,30 +1,30 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, use } from "react"
 import { getData } from "../Utils/localStorage";
 import { AllUsersList } from "./AllUsersList";
+import { useAuth } from "../Context/AuthContext";
+import { useTask } from "../Context/TaskContext";
 
 export const AllEmployeeLayout = () =>{
 
-    const [users, setUsers] = useState([]);
+    const {data} = useTask()
+
+    const users = data.users;
+    // const [users, setUsers] = useState([]);
     const [selected, setSelected] = useState(users[0])
 
-    useEffect(()=>{
-        const appData = getData();
-        setUsers(appData.users)
-    },[])
-
     return(
-        <div className="min-h-screen bg-slate-950 text-white p-4 flex flex-col gap-4">
+        <div className=" bg-slate-950 text-white p-4 flex flex-col gap-4">
 
       <div className="flex items-center justify-between px-2">
         <div className="flex items-center gap-3">
-          <div className=" py-2 px-3 rounded-lg bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center text-md font-bold">
+          <div className=" py-2 px-3 rounded-lg text-[var(--primary-button-Color)] flex items-center justify-center text-3xl font-serif underline underline-offset-4 font-bold">
             All Users 
           </div>
         </div>
         <span className="text-xs text-slate-500">{users.length} Total Users</span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-4 flex-1">
+      <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-4 flex-1 max-h-86">
         < AllUsersList  users={users} selected={selected} setSelected={setSelected}/>
 
         {selected ? (

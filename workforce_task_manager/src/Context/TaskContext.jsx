@@ -6,6 +6,7 @@ import { useContext } from "react";
 const TaskContext = createContext();
 
 export const TaskProvider = ({ children }) => {
+
     const [data, setAppData] = useState(getData());
 
     const createEmployee = (user) => {
@@ -43,7 +44,7 @@ export const TaskProvider = ({ children }) => {
         setData(updated)
     }
     return (
-        <TaskContext.Provider value={createEmployee, createTask }>
+        <TaskContext.Provider value={{ createEmployee, createTask, data }}>
             {children}
         </TaskContext.Provider>
     )

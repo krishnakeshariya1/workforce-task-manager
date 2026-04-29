@@ -12,7 +12,7 @@ export const Navbar = () => {
 
     return (
         < div
-            className="w-full py-4 px-15 gap-2 flex items-center justify-between mb-10 ">
+            className="w-full py-4 px-15 gap-2 flex items-center justify-between mb-4">
             < Link
                 className="bg-black w-15"
             >

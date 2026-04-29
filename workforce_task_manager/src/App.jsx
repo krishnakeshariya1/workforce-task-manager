@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { setData } from "./Utils/localStorage"
+import { getData, setData } from "./Utils/localStorage"
 import { Login } from "./Pages/Login"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { ProtectedRoute } from "./Routes/ProtectedRoute"
@@ -19,26 +19,14 @@ const App = () => {
         password: 224755,
         role: "admin"
       },
-      {
-        id: "2",
-        name: "Prince Verma",
-        email: "verma@gmail.com",
-        password: 224755,
-        role: "employee"
-      },
-      {
-        id: "3",
-        name: "Ajeet Likhar",
-        email: "likhar8@gmail.com",
-        password: 224755,
-        role: "employee"
-      }
     ],
     tasks: []
   }
 
   useEffect(() => {
-    setData(data)
+    const appData = getData();
+
+    if(!appData.users) setData(data)
   }, [])
 
 

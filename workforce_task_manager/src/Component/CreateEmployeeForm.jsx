@@ -8,23 +8,29 @@ export const CreateEmployeeForm = () => {
     const [Form, setForm] = useState({
         name: "",
         email: "",
-        password: null,
+        password: "",
     })
 
     const handleSubmit = (e) =>{
         e.preventDefault();
 
         createEmployee(Form)
+
+        setForm({
+            name : "",
+            email : "",
+            password : ""
+        })
     }
 
     return (
 
         < div
-            className="w-full h-auto flex items-center justify-center py-3 px-5"
+            className=" flex items-center justify-center py-3 px-5 bg-slate-950"
         >
             < form
                 onSubmit={handleSubmit}
-                className=" bg-[var(--primary-page-Color)] text-[var(--primary-text-Color)] flex flex-col gap-7 items-start justify-center py-4 px-10 rounded-4xl"
+                className=" bg-slate-900 text-[var(--primary-text-Color)] flex flex-col gap-7 items-start justify-center py-4 px-10 rounded-4xl w-full"
             >
                 < h2
                     className="text-3xl font-bold text-[var(--primary-button-Color)] font-serif  underline underline-offset-5"
