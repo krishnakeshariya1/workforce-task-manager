@@ -6,7 +6,7 @@ export const navLinks = {
   ],
   employee: [
     { name: "Dashboard", path: "/employee" },
-    { name: "My Tasks", path: "/employee/tasks" },
+    { name: "Status Page ", path: "/employee/Status" },
     { name: "Profile", path: "/employee/profile" }
   ]
 };
