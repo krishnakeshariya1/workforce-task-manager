@@ -8,8 +8,6 @@ import { EmployeeDashboard } from "./Pages/Employee/EmployeeDashboard"
 import { EmployeesDetail } from "./Pages/Admin/EmployeesDetail"
 import { CreateTask } from "./Pages/Admin/CreateTask"
 import { AdminLayout } from "./Pages/Admin/AdminLayout"
-import { EmployeeLayout } from "./Pages/Employee/EmployeeLayout"
-import { Status } from "./Pages/Employee/Status"
 
 const App = () => {
   const data = {
@@ -73,20 +71,10 @@ const App = () => {
         < Route
           path="/employee/*"
           element={
-            < ProtectedRoute  role="employee">
-              < EmployeeLayout />
+            < ProtectedRoute role="employee">
+              < EmployeeDashboard />
             </ProtectedRoute>}
-        >
-          < Route
-            index
-            element={ <EmployeeDashboard />}
-          />
-          <Route 
-          path="Status"
-          element={< Status/>}/>
-
-        </Route>
-
+        />
       </Routes>
     </BrowserRouter>
   )

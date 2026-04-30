@@ -9,6 +9,7 @@ import { TaskCard } from "../../Component/TaskCard"
 import { useTask } from "../../Context/TaskContext"
 import { useAuth } from "../../Context/AuthContext"
 import useDebounce from "../../Hooks/UseBounce"
+import { SearchBar } from "../../Component/SearchBar"
 
 export const AdminDashboard = () => {
 
@@ -37,10 +38,6 @@ export const AdminDashboard = () => {
     const inprogress = tasks.filter(t => t.status === "inprogress").length;
     const done = tasks.filter(t => t.status === "done").length;
 
-    useEffect(()=>{
-        console.log(finalTasks)
-    },[filter])
-
     return (
 
         <div className="w-full h-auto bg-[var(--body-background-Color)] flex flex-col gap-4 px-4">
@@ -52,14 +49,7 @@ export const AdminDashboard = () => {
             </div>
 
             <div className="flex items-center gap-4 mb-6">
-
-                <input
-                    value={search}
-                    type="text"
-                    placeholder="Search by task title..."
-                    className="flex-1 bg-[#1c1c1c] border border-gray-700 px-4 py-2 rounded-md outline-none placeholder:text-gray-500 text-white"
-                    onChange={(e) => setSearch(e.target.value)}
-                />
+                <SearchBar  search={search} setSearch={setSearch}/>
 
                 <div className="flex gap-3">
                     <FilterBtn setFilter={setFilter}/>
