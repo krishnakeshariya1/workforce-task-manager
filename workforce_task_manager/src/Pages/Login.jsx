@@ -16,7 +16,6 @@ export const Login = () => {
         e.preventDefault();
 
         const user = login(form.email, form.password);
-        console.log(user);
 
         if(!user) {
             alert("Invalide Credential")
@@ -33,20 +32,20 @@ export const Login = () => {
     }
 
     return (
-        <div className="w-full h-screen flex items-center justify-center bg-[var(--body-background-Color)] ">
+        <div className="w-full h-screen flex items-center justify-center bg-[var(--color-page-bg)] ">
         < form
             id="loginForm"
             onSubmit={(e)=> handleSubmit(e)}
-            className="flex flex-col items-start justify-center gap-5 w-fit py-10 px-15 text-[var(--primary-text-Color)] bg-[var(--primary-page-Color)] "
+            className="flex flex-col items-start justify-center gap-5 w-fit py-10 px-15 text-[var(--color-primary-text)] bg-[var(--color-section-bg)] "
         >
             < h2
-                className="text-4xl font-bold text-[var(--primary-text-Color)] mb-1 font-serif "
+                className="text-4xl font-bold text-[var(--color-primary-text)] mb-1 font-serif "
             >
                 Log In
             </h2>
 
             < div
-                className="flex flex-col text-[var(--primary-text-Color)]"
+                className="flex flex-col text-[var(--color-primary-text)]"
             >
                 < label
                     className="text-lg mb-1"
@@ -60,11 +59,11 @@ export const Login = () => {
                     required
                     value={form.email}
                     onChange={(e)=> setForm({...form, email : e.target.value})}
-                    className="border-[0.3px] rounded w-sm border-gray-600 placeholder:text-[var(--secondary-text-Color)] bg-[var(--body-background-Color)] py-1 px-2 text-lg"
+                    className="border-[0.3px] rounded w-sm border-[var(--color-border)] placeholder:text-[var(--color-secondary-text)] bg-[var(--color-page-bg)] py-1 px-2 text-lg"
                 />
             </div>
 
-            <div className="flex flex-col text-[var(--primary-text-Color)]">
+            < div className="flex flex-col text-[var(--color-primary-text)]">
                 < label
                     className="text-lg mb-1"
                 >
@@ -77,13 +76,13 @@ export const Login = () => {
                     value={form.password}
                     required
                     onChange={(e)=> setForm({...form, password : e.target.value})}
-                    className="border-[0.3px] rounded w-sm border-gray-600 placeholder:text-[var(--secondary-text-Color)] bg-[var(--body-background-Color)] py-1 px-2 text-lg"
+                    className="border-[0.3px] rounded w-sm border-[var(--color-border)] placeholder:text-[var(--color-secondary-text)] bg-[var(--color-page-bg)] py-1 px-2 text-lg"
                 />
             </div>
 
             < button
                 type="submit"
-                className=" self-center bg-[var(--primary-button-Color)] font-semibold text-lg rounded py-2 px-4"
+                className=" self-center bg-[var(--color-login-btn)] font-semibold text-lg rounded py-2 px-4"
             >
                 LogIn
             </button>

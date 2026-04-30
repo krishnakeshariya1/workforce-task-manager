@@ -37,13 +37,13 @@ export const TaskForm = () => {
     }
 
     return (
-        <div className="bg-[#0f0f0f] min-h-screen text-white flex justify-center items-center p-6">
-            <form className="w-full max-w-4xl bg-[#1c1c1c] p-6 rounded-xl border border-gray-700 space-y-6"
+        <div className="bg-[var(--color-page-bg)] min-h-screen text-[var(--color-primary-text)] flex justify-center items-center p-6">
+            <form className="w-full max-w-4xl bg-[var(--color-section-bg)] p-6 rounded-xl border border-[var(--color-border)] space-y-6"
              onSubmit={submitHandler}>
-                <h2 className="text-xl font-semibold text-gray-300">CREATE TASK</h2>
+                <h2 className="text-xl font-semibold text-[var(--color-third-text)]">CREATE TASK</h2>
                 <div>
-                    <label className="block mb-2 text-sm text-gray-400">
-                        Title <span className="text-red-500">*</span>
+                    <label className="block mb-2 text-sm text-[var(--color-third-text)]">
+                        Title <span className="text-[var(--color-logout-btn)]">*</span>
                     </label>
                     <input
                         type="text"
@@ -51,11 +51,11 @@ export const TaskForm = () => {
                         placeholder="e.g. Redesign landing page hero section"
                         value={Form.title}
                         onChange={handleChange}
-                        className="w-full bg-[#111] border border-gray-600 px-4 py-2 rounded-md outline-none"
+                        className="w-full bg-[var(--color-search)] border border-[var(--color-border)] px-4 py-2 rounded-md outline-none"
                     />
                 </div>
                 <div>
-                    <label className="block mb-2 text-sm text-gray-400">
+                    <label className="block mb-2 text-sm text-[var(--color-third-text)]">
                         Description
                     </label>
                     <textarea
@@ -64,22 +64,22 @@ export const TaskForm = () => {
                         value={Form.description}
                         onChange={handleChange}
                         rows={4}
-                        className="w-full bg-[#111] border border-gray-600 px-4 py-2 rounded-md outline-none"
+                        className="w-full bg-[var(--color-search)] border border-[var(--color-border)] px-4 py-2 rounded-md outline-none"
                     />
                 </div>
-                <h3 className="text-sm text-gray-400 border-t border-gray-700 pt-4">
+                <h3 className="text-sm text-[var(--color-third-text)] border-t border-[var(--color-border)] pt-4">
                     DETAILS
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
                     <div>
-                        <label className="block mb-2 text-sm text-gray-400">
-                            Status <span className="text-red-500">*</span>
+                        <label className="block mb-2 text-sm text-[var(--color-third-text)]">
+                            Status <span className="text-[var(--color-logout-btn)]">*</span>
                         </label>
                         <select
                             name="status"
                             value={Form.status}
                             onChange={handleChange}
-                            className="w-full bg-[#111] border border-gray-600 px-4 py-2 rounded-md"
+                            className="w-full bg-[var(--color-search)] border border-[var(--color-border)] px-4 py-2 rounded-md"
                         >
                             <option value="">— Select status —</option>
                             <option value="todo">To Do</option>
@@ -89,14 +89,14 @@ export const TaskForm = () => {
                     </div>
 
                     <div>
-                        <label className="block mb-2 text-sm text-gray-400">
-                            Priority <span className="text-red-500">*</span>
+                        <label className="block mb-2 text-sm text-[var(--color-third-text)]">
+                            Priority <span className="text-[var(--color-logout-btn)]">*</span>
                         </label>
                         <select
                             name="priority"
                             value={Form.priority}
                             onChange={handleChange}
-                            className="w-full bg-[#111] border border-gray-600 px-4 py-2 rounded-md"
+                            className="w-full bg-[var(--color-search)] border border-[var(--color-border)] px-4 py-2 rounded-md"
                         >
                             <option value="">— Select priority —</option>
                             <option value="high">High</option>
@@ -106,14 +106,14 @@ export const TaskForm = () => {
                     </div>
 
                     <div>
-                        <label className="block mb-2 text-sm text-gray-400">
-                            Assignee <span className="text-red-500">*</span>
+                        <label className="block mb-2 text-sm text-[var(--color-third-text)]">
+                            Assignee <span className="text-[var(--color-logout-btn)]">*</span>
                         </label>
                         <select
                             name="assignedTo"
                             value={Form.assignedTo}
                             onChange={handleChange}
-                            className="w-full bg-[#111] border border-gray-600 px-4 py-2 rounded-md"
+                            className="w-full bg-[var(--color-search)] border border-[var(--color-border)] px-4 py-2 rounded-md"
                         >
                             <option value="">— Select assignee —</option>
                             {users.map((ele) =>{
@@ -126,15 +126,15 @@ export const TaskForm = () => {
 
 
                     <div>
-                        <label className="block mb-2 text-sm text-gray-400">
-                            Due date <span className="text-red-500">*</span>
+                        <label className="block mb-2 text-sm text-[var(--color-third-text)]">
+                            Due date <span className="text-[var(--color-logout-btn)]">*</span>
                         </label>
                         <input
                             type="date"
                             name="deadline"
                             value={Form.deadline}
                             onChange={handleChange}
-                            className="w-full bg-[#111] border border-gray-600 px-4 py-2 rounded-md"
+                            className="w-full bg-[var(--color-search)] border border-[var(--color-border)] px-4 py-2 rounded-md"
                         />
                     </div>
                 </div>
@@ -142,7 +142,7 @@ export const TaskForm = () => {
                 <div className="flex gap-4 pt-4">
                     <button
                         type="reset"
-                        className="flex-1 border border-gray-600 py-2 rounded-md hover:bg-[#2a2a2a]"
+                        className="flex-1 border border-[var(--color-border)] py-2 rounded-md hover:bg-[var(--color-hover-bg)]"
                         onClick={resetForm}
                     >
                         Reset
@@ -150,7 +150,7 @@ export const TaskForm = () => {
 
                     <button
                         type="submit"
-                        className="flex-1 bg-white text-black font-semibold py-2 rounded-md hover:opacity-90"
+                        className="flex-1 bg-[var(--color-submit-bg)] text-[var(--color-submit-text)] font-semibold py-2 rounded-md hover:opacity-90"
                     >
                         Create Task
                     </button>

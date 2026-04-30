@@ -8,11 +8,13 @@ import { useAuth } from "../../Context/AuthContext";
 import { useEffect, useState } from "react";
 import useDebounce from "../../Hooks/UseBounce";
 import { SearchBar } from "../../Component/SearchBar";
+import { useTheme } from "../../Context/ThemeContext";
 
 export const EmployeeDashboard = () => {
 
   const { data } = useTask()
   const { user, logOut } = useAuth();
+  const {toggleTheme , theme} = useTheme()
   let tasks = data.tasks;
 
   const [search, setSearch] = useState("");
@@ -39,22 +41,30 @@ export const EmployeeDashboard = () => {
 
 
   return (
-      <div className="p-6 bg-[#0f0f0f] h-screen text-white overflow-hidden" >
+      <div className="p-6 bg-[var(--color-page-bg)] h-screen text-[var(--color-primary-text)] overflow-hidden" >
 
         <div className=" flex items-center justify-between">
           <div className="mb-6">
           <h1 className="text-2xl font-semibold">My Tasks</h1>
-          <p className="text-gray-400 text-sm">
+          <p className="text-[var(--color-secondary-text)] text-sm">
             Track and manage your assigned work
           </p>
         </div>
 
-          < button
-            className="bg-red-600 px-3 py-2 rounded-lg font-semibold"
+          <div className=" flex  items-center gap-4">
+            < button
+            className="bg-[var(--color-logout-btn)] px-3 py-2 rounded-lg font-semibold text-[var(--color-primary-text)]"
             onClick={()=> logOut()}
           >
              Log Out
           </button>
+          < button
+            className="bg-[var(--color-secondary-btn)] px-3 py-2 text-[var(--color-primary-text)] rounded-lg font-semibold"
+            onClick={()=> toggleTheme()}
+          >
+             Toggle Theme
+          </button>
+          </div>
 
         </div>
 

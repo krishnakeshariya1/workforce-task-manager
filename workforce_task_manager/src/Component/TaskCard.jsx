@@ -30,20 +30,20 @@ export const TaskCard = ({ finalTasks }) => {
                 const isTaskEditing = editingTaskId === task.id;
 
                 return (
-                    <div className="bg-[#1c1c1c] p-4 rounded-lg border border-gray-700" key={task.id}>
+                    <div className="bg-[var(--color-dark-bg)] p-4 rounded-lg border border-[var(--color-border)]" key={task.id}>
                         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
                             <div>
-                                <h3 className="text-lg font-semibold text-white">{task.title}</h3>
+                                <h3 className="text-lg font-semibold text-[var(--color-primary-text)]">{task.title}</h3>
                             </div>
 
                             <div className="flex items-center gap-2">
                                 {!isTaskEditing ? (
                                     <>
-                                        <span className={`text-sm px-3 py-1 rounded-full font-semibold ${statusColor[task.status] || "bg-gray-600"}`}>
+                                        <span className={`text-sm px-3 py-1 rounded-full font-semibold ${statusColor[task.status] || "bg-[var(--color-secondary-btn)]"}`}>
                                             {task.status === "done" ? "completed" : task.status}
                                         </span>
                                         <button
-                                            className="bg-[#000] text-white px-2 py-1 rounded-lg ml-2.5"
+                                            className="bg-[var(--color-dark-btn)] text-[var(--color-primary-text)] px-2 py-1 rounded-lg ml-2.5"
                                             onClick={() => {
                                                 setEditingTaskId(task.id);
                                                 setSelectedStatus(task.status);
@@ -55,7 +55,7 @@ export const TaskCard = ({ finalTasks }) => {
                                 ) : (
                                     <select
                                         value={selectedStatus}
-                                        className="bg-[#111] border border-gray-600 px-3 py-1 rounded-md"
+                                        className="bg-[var(--color-search)] border border-[var(--color-border)] px-3 py-1 rounded-md"
                                         onChange={(e) => handleStatusChange(task.id, e.target.value)}
                                     >
                                         <option value="todo">To Do</option>
@@ -66,7 +66,7 @@ export const TaskCard = ({ finalTasks }) => {
                             </div>
                         </div>
 
-                        <p className="text-gray-400 mb-3">{task.description}</p>
+                        <p className="text-[var(--color-secondary-text)] mb-3">{task.description}</p>
 
                         <div className="flex items-center gap-2 mb-3">
                             <span className={`text-xs px-2 py-1 rounded font-semibold ${priorityColor[task.priority] ?? "bg-gray-600"}`}>
@@ -74,7 +74,7 @@ export const TaskCard = ({ finalTasks }) => {
                             </span>
                         </div>
 
-                        <div className="flex justify-between items-center text-sm text-gray-400">
+                        <div className="flex justify-between items-center text-sm text-[var(--color-secondary-text)]">
                             <span>{task.assignedTo}</span>
                             <span>{task.date}</span>
                         </div>

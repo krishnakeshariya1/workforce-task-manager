@@ -11,7 +11,7 @@ import { TaskForm } from "../../Component/TaskFrom"
 
 export const CreateTask = () => {
     return (
-        <div className="text-white">
+        <div className="text-[var(--color-page-bg)]">
             <TaskForm />
         </div>
     )

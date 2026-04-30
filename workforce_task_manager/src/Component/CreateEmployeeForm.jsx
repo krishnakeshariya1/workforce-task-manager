@@ -26,14 +26,14 @@ export const CreateEmployeeForm = () => {
     return (
 
         < div
-            className=" flex items-center justify-center py-3 px-5 bg-slate-950"
+            className=" flex items-center justify-center py-3 px-5 bg-[var(--color-page-bg)]"
         >
             < form
                 onSubmit={handleSubmit}
-                className=" bg-slate-900 text-[var(--primary-text-Color)] flex flex-col gap-7 items-start justify-center py-4 px-10 rounded-4xl w-full"
+                className=" bg-[var(--color-section-bg)] text-[var(--color-primary-text)] flex flex-col gap-7 items-start justify-center py-4 px-10 rounded-4xl w-full"
             >
                 < h2
-                    className="text-3xl font-bold text-[var(--primary-button-Color)] font-serif  underline underline-offset-5"
+                    className="text-3xl font-bold text-[var(--color-primary-btn)] font-serif  underline underline-offset-5"
                 >
                     Create Employee  
                 </h2>
@@ -50,7 +50,7 @@ export const CreateEmployeeForm = () => {
                         type="text"
                         placeholder="Ex. Dhruv singh"
                         id="name"
-                        className="border-[0.3px] border-gray-400 rounded py-1 px-4 w-sm"
+                        className="border-[0.3px] border-[var(--color-border)] rounded py-1 px-4 w-sm"
                         onChange={(e) => setForm({...Form, name : e.target.value})} />
                 </div>
 
@@ -67,7 +67,7 @@ export const CreateEmployeeForm = () => {
                         type="email"
                         placeholder="Ex. dhruv@gmail.com"
                         id="email"
-                        className="border-[0.3px] border-gray-400 rounded py-1 px-4 w-sm"
+                        className="border-[0.3px] border-[var(--color-border)] rounded py-1 px-4 w-sm"
                         onChange={(e) => setForm({ ...Form, email : e.target.value})} />
                 </div>
 
@@ -84,12 +84,12 @@ export const CreateEmployeeForm = () => {
                         type="password"
                         placeholder="Ex. dhruv@gmail.com"
                         id="password"
-                        className="border-[0.3px] border-gray-400 rounded py-1 px-4 w-sm"
+                        className="border-[0.3px] border-[var(--color-border)] rounded py-1 px-4 w-sm"
                         onChange={(e) => setForm({ ...Form, password : Number(e.target.value)})} />
                 </div>
 
                 < button
-                  className="bg-[var(--primary-button-Color)] px-6 py-2 rounded-xl font-semibold self-center cursor-pointer"
+                  className="bg-[var(--color-primary-btn)] text-[var(--color-btn-text)] px-6 py-2 rounded-xl font-semibold self-center cursor-pointer"
                   type="submit"
                 >
                      Create

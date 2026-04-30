@@ -10,12 +10,14 @@ import { useTask } from "../../Context/TaskContext"
 import { useAuth } from "../../Context/AuthContext"
 import useDebounce from "../../Hooks/UseBounce"
 import { SearchBar } from "../../Component/SearchBar"
+import { useTheme } from "../../Context/ThemeContext"
 
 export const AdminDashboard = () => {
 
     const { data } = useTask();
     const { user } = useAuth();
-    
+    const { toggleTheme } = useTheme()
+
 
     const [search, setSearch] = useState("")
     const [filter, setFilter] = useState("all")
@@ -26,9 +28,9 @@ export const AdminDashboard = () => {
     const searchTasks = tasks.filter((task) =>
         task.title.toLowerCase().includes(debounceSearch.toLowerCase())
     )
-    
-    const finalTasks = searchTasks.filter((task)=>{
-        if(filter === "all") return true;
+
+    const finalTasks = searchTasks.filter((task) => {
+        if (filter === "all") return true;
 
         return task.status === filter;
     })
@@ -40,7 +42,14 @@ export const AdminDashboard = () => {
 
     return (
 
-        <div className="w-full h-auto bg-[var(--body-background-Color)] flex flex-col gap-4 px-4">
+        <div className="w-full h-auto bg-[var(--color-page-bg)] flex flex-col gap-4 px-4">
+            < button
+                className="bg-[var(--color-secondary-btn)] px-3 py-2 rounded-lg font-semibold w-fit text-[var(--color-primary-text)] self-end"
+                onClick={() => toggleTheme()}
+            >
+                Toggle Theme
+            </button>
+
             <div className="grid grid-cols-4 gap-4 mb-6">
                 < StatCard label="Total" value={total} />
                 < StatCard label="Todo" value={todo} />
@@ -49,10 +58,10 @@ export const AdminDashboard = () => {
             </div>
 
             <div className="flex items-center gap-4 mb-6">
-                <SearchBar  search={search} setSearch={setSearch}/>
+                <SearchBar search={search} setSearch={setSearch} />
 
                 <div className="flex gap-3">
-                    <FilterBtn setFilter={setFilter}/>
+                    <FilterBtn setFilter={setFilter} />
                 </div>
             </div>
 

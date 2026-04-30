@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }) => {
         const usersData = getData();
 
         const foundUser = usersData.users.find((user) => {
-            return user.email === email && user.password === Number(password);
+            return user.email === email.toLowerCase() && user.password === Number(password);
         })
 
         if (foundUser) {
