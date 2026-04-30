@@ -12,7 +12,7 @@ import { SearchBar } from "../../Component/SearchBar";
 export const EmployeeDashboard = () => {
 
   const { data } = useTask()
-  const { user } = useAuth();
+  const { user, logOut } = useAuth();
   let tasks = data.tasks;
 
   const [search, setSearch] = useState("");
@@ -41,11 +41,21 @@ export const EmployeeDashboard = () => {
   return (
       <div className="p-6 bg-[#0f0f0f] h-screen text-white overflow-hidden" >
 
-        <div className="mb-6">
+        <div className=" flex items-center justify-between">
+          <div className="mb-6">
           <h1 className="text-2xl font-semibold">My Tasks</h1>
           <p className="text-gray-400 text-sm">
             Track and manage your assigned work
           </p>
+        </div>
+
+          < button
+            className="bg-red-600 px-3 py-2 rounded-lg font-semibold"
+            onClick={()=> logOut()}
+          >
+             Log Out
+          </button>
+
         </div>
 
         <div className="grid grid-cols-4 gap-4 mb-6">
