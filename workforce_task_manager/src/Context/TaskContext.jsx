@@ -42,8 +42,27 @@ export const TaskProvider = ({ children }) => {
         setAppData(updated)
         setData(updated)
     }
+
+    const updateTaskStatus = (taskId, newStatus) =>{
+        const updatedTask = data.tasks.map((task)=>{
+
+         if(task.id === taskId){
+            return {...task, status : newStatus };
+         }
+
+         return task;
+
+        })
+
+        const updatedData = {...data, tasks : updatedTask };
+
+        setAppData(updatedData)
+        setData(updatedData);
+        
+    }
+
     return (
-        <TaskContext.Provider value={{ createEmployee, createTask, data }}>
+        <TaskContext.Provider value={{ createEmployee, createTask, data, updateTaskStatus }}>
             {children}
         </TaskContext.Provider>
     )

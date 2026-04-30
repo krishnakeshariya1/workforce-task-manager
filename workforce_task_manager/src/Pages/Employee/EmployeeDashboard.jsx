@@ -33,17 +33,10 @@ export const EmployeeDashboard = () => {
     return task.status === filter;
   })
 
-  useEffect(() => {
-    console.log(UserTasks)
-  }, [filter, setFilter])
-
   const todo = UserTasks.filter(t => t.status === "todo").length;
   const inprogress = UserTasks.filter(t => t.status === "inprogress").length;
   const done = UserTasks.filter(t => t.status === "done").length;
 
-  useEffect(()=>{
-    console.log(finalTasks)
-  },[search])
 
   return (
       <div className="p-6 bg-[#0f0f0f] h-screen text-white overflow-hidden" >
