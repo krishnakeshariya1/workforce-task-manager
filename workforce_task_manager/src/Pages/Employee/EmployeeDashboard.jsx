@@ -41,51 +41,57 @@ export const EmployeeDashboard = () => {
 
 
   return (
-      <div className="p-6 bg-[var(--color-page-bg)] h-screen text-[var(--color-primary-text)] overflow-hidden" >
+      <div className="p-3 sm:p-6 bg-[var(--color-page-bg)] min-h-screen text-[var(--color-primary-text)] overflow-x-hidden" >
 
-        <div className=" flex items-center justify-between">
-          <div className="mb-6">
-          <h1 className="text-2xl font-semibold">My Tasks</h1>
-          <p className="text-[var(--color-secondary-text)] text-sm">
-            Track and manage your assigned work
-          </p>
-        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          
+          <div className="mb-2 lg:mb-6">
+            <h1 className="text-xl sm:text-2xl font-semibold">
+              My Tasks
+            </h1>
 
-          <div className=" flex  items-center gap-4">
-            < button
-            className="bg-[var(--color-logout-btn)] px-3 py-2 rounded-lg font-semibold text-[var(--color-primary-text)]"
-            onClick={()=> logOut()}
-          >
-             Log Out
-          </button>
-          < button
-            className="bg-[var(--color-secondary-btn)] px-3 py-2 text-[var(--color-primary-text)] rounded-lg font-semibold"
-            onClick={()=> toggleTheme()}
-          >
-             Toggle Theme
-          </button>
+            <p className="text-[var(--color-secondary-text)] text-sm">
+              Track and manage your assigned work
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full lg:w-auto">
+            
+            <button
+              className="bg-[var(--color-logout-btn)] px-3 py-2 rounded-lg font-semibold text-[var(--color-primary-text)] w-full sm:w-auto"
+              onClick={()=> logOut()}
+            >
+              Log Out
+            </button>
+
+            <button
+              className="bg-[var(--color-secondary-btn)] px-3 py-2 text-[var(--color-primary-text)] rounded-lg font-semibold w-full sm:w-auto"
+              onClick={()=> toggleTheme()}
+            >
+              Toggle Theme
+            </button>
           </div>
 
         </div>
 
-        <div className="grid grid-cols-4 gap-4 mb-6">
-          < StatCard label="Total Tasks" value={UserTasks.length} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          <StatCard label="Total Tasks" value={UserTasks.length} />
           <StatCard label="To Do" value={todo} />
           <StatCard label="In Progress" value={inprogress} />
           <StatCard label="Completed" value={done} />
         </div>
 
-        <div className="flex items-center gap-4 mb-6">
+        <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-4 mb-6">
+          
           <SearchBar search={search} setSearch={setSearch}/>
 
-          <div className="flex gap-3">
-            < FilterBtn setFilter={setFilter} />
+          <div className="w-full lg:w-auto">
+            <FilterBtn setFilter={setFilter} />
           </div>
         </div>
 
-        <div className="space-y-4">
-
-          < TaskCard
+        <div className="space-y-4 overflow-hidden">
+          <TaskCard
             finalTasks={finalTasks}
           />
         </div>

@@ -3,7 +3,7 @@ import { Navbar } from "../../Component/Navbar"
 
 export const AdminLayout = () =>{
     return(
-        <div className="w-full h-screen  bg-[var(--color-page-bg)]">
+        <div className="w-full min-h-screen bg-[var(--color-page-bg)] overflow-x-hidden">
             <Navbar/>
             <Outlet />
         </div>

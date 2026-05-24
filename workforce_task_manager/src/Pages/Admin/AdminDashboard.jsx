@@ -18,7 +18,6 @@ export const AdminDashboard = () => {
     const { user } = useAuth();
     const { toggleTheme } = useTheme()
 
-
     const [search, setSearch] = useState("")
     const [filter, setFilter] = useState("all")
     const debounceSearch = useDebounce(search, 500)
@@ -42,33 +41,37 @@ export const AdminDashboard = () => {
 
     return (
 
-        <div className="w-full h-auto bg-[var(--color-page-bg)] flex flex-col gap-4 px-4">
-            < button
-                className="bg-[var(--color-secondary-btn)] px-3 py-2 rounded-lg font-semibold w-fit text-[var(--color-primary-text)] self-end"
+        <div className="w-full min-h-screen bg-[var(--color-page-bg)] flex flex-col gap-4 px-3 sm:px-4 py-4 overflow-hidden">
+
+            <button
+                className="bg-[var(--color-secondary-btn)] px-3 py-2 rounded-lg font-semibold w-full sm:w-fit text-[var(--color-primary-text)] self-end text-sm sm:text-base"
                 onClick={() => toggleTheme()}
             >
                 Toggle Theme
             </button>
 
-            <div className="grid grid-cols-4 gap-4 mb-6">
-                < StatCard label="Total" value={total} />
-                < StatCard label="Todo" value={todo} />
-                < StatCard label="In Progress" value={inprogress} />
-                < StatCard label="Completed" value={done} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-2">
+                <StatCard label="Total" value={total} />
+                <StatCard label="Todo" value={todo} />
+                <StatCard label="In Progress" value={inprogress} />
+                <StatCard label="Completed" value={done} />
             </div>
 
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-4 mb-2">
+                
                 <SearchBar search={search} setSearch={setSearch} />
 
-                <div className="flex gap-3">
+                <div className="w-full lg:w-auto">
                     <FilterBtn setFilter={setFilter} />
                 </div>
             </div>
 
-            <div className=" h-96 overflow-y-scroll flex  flex-col gap-4" id="taskCardContainer">
+            <div
+                className="h-[500px] sm:h-[600px] overflow-y-auto flex flex-col gap-4 pb-4"
+                id="taskCardContainer"
+            >
                 <TaskCard finalTasks={finalTasks} />
             </div>
-
 
         </div>
     )

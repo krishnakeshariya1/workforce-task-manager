@@ -10,6 +10,7 @@ import { CreateTask } from "./Pages/Admin/CreateTask"
 import { AdminLayout } from "./Pages/Admin/AdminLayout"
 
 const App = () => {
+
   const data = {
     users: [
       {
@@ -29,54 +30,63 @@ const App = () => {
     if (!appData.users) setData(data)
   }, [])
 
-
   return (
 
-    <BrowserRouter >
+    <div className="w-full min-h-screen overflow-x-hidden">
+      <BrowserRouter>
 
-      <Routes >
+        <Routes>
 
-        {/* Login Page Route  */}
+          {/* Login Page Route  */}
 
-        < Route
-          path="/"
-          element={<Login />} />
-
-        {/* Admin routes */}
-
-        < Route
-          path="/admin/*"
-          element={
-            < ProtectedRoute role="admin" >
-              < AdminLayout />
-            </ProtectedRoute>}
-        >
-          < Route
-            index
-            element={< AdminDashboard />}
-          />
-          < Route
-            path="employeesDetail"
-            element={<EmployeesDetail />}
-          />
-          < Route
-            path="CreateTask"
-            element={< CreateTask />}
+          <Route
+            path="/"
+            element={<Login />}
           />
 
-        </Route>
+          {/* Admin routes */}
 
-        {/* Employee Routes */}
+          <Route
+            path="/admin/*"
+            element={
+              <ProtectedRoute role="admin">
+                <AdminLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route
+              index
+              element={<AdminDashboard />}
+            />
 
-        < Route
-          path="/employee/*"
-          element={
-            < ProtectedRoute role="employee">
-              < EmployeeDashboard />
-            </ProtectedRoute>}
-        />
-      </Routes>
-    </BrowserRouter>
+            <Route
+              path="employeesDetail"
+              element={<EmployeesDetail />}
+            />
+
+            <Route
+              path="CreateTask"
+              element={<CreateTask />}
+            />
+
+          </Route>
+
+          {/* Employee Routes */}
+
+          <Route
+            path="/employee/*"
+            element={
+              <ProtectedRoute role="employee">
+                <EmployeeDashboard />
+              </ProtectedRoute>
+            }
+          />
+          
+        </Routes>
+
+      </BrowserRouter>
+    </div>
   )
 }
+
 export default App

@@ -7,7 +7,7 @@ import { AllEmployeeLayout } from "../../Component/AllEmployeeLayout"
 
 export const EmployeesDetail = () =>{
     return(
-        <div className="w-full h-auto  bg-[var(--color-page-bg)] flex flex-col gap-7">
+        <div className="w-full min-h-screen bg-[var(--color-page-bg)] flex flex-col gap-4 px-3 sm:px-4 py-4 overflow-x-hidden">
            <AllEmployeeLayout />
            <CreateEmployeeForm />
         </div>
